@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Stupid coaching</h1>
+</div>
+<div class="border-start border-5 mx-5 ">
+  <div class="container">
+    <div class="tile">
+      <p><%=params[:answer]%></p>
+      <p>-<em>You</em></p>
+    </div>
+  </div>
+</div>
+<div class="border-start border-5 mx-5 bg-warning">
+  <div class="container">
+      <%if params[:answer] == "I am going to work"%>
+        <p>Great!</p>
+        <% elsif params[:answer].include? "?"%>
+          <p>Silly question, get dressed and go to work!</p>
+          <% else %>
+          <p>I don't care, get dressed and go to work!</p>
+      <% end %>
+      <p>-<em>Your couch</em></p>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p><%= link_to "Ask a new question", ask_path, :class => "no-underline"%>
+</div>
